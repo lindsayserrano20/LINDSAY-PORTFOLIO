@@ -268,3 +268,116 @@ body {
     to { box-shadow: 0 0 30px #ad1457, 0 0 50px #ff80ab, 0 0 10px white; }
 }
 
+/* --- GLOBAL LAYOUT --- */
+body {
+    background-color: #f06292;
+    font-family: 'Segoe UI', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+}
+
+.container {
+    background: white;
+    padding: 50px 40px;
+    border-radius: 40px;
+    width: 100%;
+    max-width: 850px; /* Slightly wider to match Event Attendance */
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    position: relative;
+}
+
+/* --- THE SHINE EFFECT TITLE --- */
+h1 {
+    font-size: 32px; /* Increased size */
+    font-weight: 800;
+    margin-top: 40px;
+    margin-bottom: 10px;
+    display: inline-block;
+    background: linear-gradient(to right, #d81b60 20%, #ff80ab 40%, #ff80ab 60%, #d81b60 80%);
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: shine 3s linear infinite;
+}
+
+@keyframes shine {
+    to { background-position: 200% center; }
+}
+
+.description {
+    color: #666;
+    font-size: 16px; /* Bigger text */
+    margin-bottom: 30px;
+}
+
+/* --- BACK BUTTON --- */
+.back-btn {
+    border: 2px solid #f8bbd0;
+    color: #d81b60;
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 25px;
+    font-size: 15px;
+    position: absolute;
+    top: 30px;
+    left: 40px;
+}
+
+/* --- TAGS / PILLS --- */
+.tag {
+    background-color: #ad1457;
+    color: white;
+    padding: 8px 20px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin: 0 5px;
+}
+
+/* --- SECTION HEADERS & ICONS --- */
+.section-header {
+    text-align: left;
+    color: #ad1457;
+    font-size: 22px; /* Increased size */
+    margin-top: 45px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+/* This fixes the "Hard Color" logo by making it match your pink theme */
+.icon {
+    filter: sepia(1) saturate(3) hue-rotate(300deg) opacity(0.7);
+    font-size: 24px;
+}
+
+.section-desc {
+    text-align: left;
+    color: #888;
+    font-size: 15px; /* Bigger text */
+    margin-bottom: 15px;
+}
+
+/* --- THE BACK-END CODE BLOCK --- */
+.code-block {
+    background-color: #262a33;
+    color: #ffffff;
+    padding: 30px; /* More padding like Event Attendance */
+    border-radius: 20px;
+    font-family: 'Consolas', 'Courier New', monospace;
+    text-align: left;
+    overflow-x: auto;
+    line-height: 1.7;
+    font-size: 16px; /* Increased font size for back-end view */
+}
+
+/* Syntax Highlighting */
+.keyword { color: #c586c0; }
+.string { color: #ce9178; }
+.comment { color: #6a9955; }
+.variable { color: #9cdcfe; }

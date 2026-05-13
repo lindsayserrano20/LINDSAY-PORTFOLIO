@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bash Shell Script Activity</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+        <a href="index.html" class="back-btn">← Back to Dashboard</a>
+        
+        <h1>Bash Shell Script Activity</h1>
+        <p class="description">Automation and directory management logic for Open-Source Technologies.</p>
+
+        <div class="tags">
+            <span class="tag">BASH 5.x</span>
+            <span class="tag">LINUX</span>
+            <span class="tag">AUTOMATION</span>
+        </div>
+
+        <h2 class="section-header"><span class="icon">💻</span> Script Logic (script.sh)</h2>
+        <p class="section-desc">Defining variables and handling directory navigation commands.</p>
+        <div class="code-block">
+<pre>
+<span class="comment">#!/bin/bash</span>
+
+<span class="keyword">echo</span> <span class="string">"What is your name?"</span>
+<span class="keyword">read</span> userName
+
+<span class="keyword">echo</span> <span class="string">"Enter folder name:"</span>
+<span class="keyword">read</span> folderName
+
+<span class="keyword">mkdir</span> <span class="variable">"$folderName"</span>
+<span class="keyword">cd</span> <span class="variable">"$folderName"</span>
+
+<span class="keyword">echo</span> <span class="string">"Open-Source Technologies"</span> > readme.txt
+<span class="keyword">echo</span> <span class="string">"Success for $userName!"</span>
+</pre>
+        </div>
+
+        <h2 class="section-header"><span class="icon">⚙️</span> Logic Implementation</h2>
+        <p class="section-desc">Executing the script through the Git Bash terminal.</p>
+        <div class="code-block">
+<pre>
+<span class="comment">// Setting permissions and running the script</span>
+<span class="keyword">chmod</span> +x script.sh
+./script.sh
+</pre>
+        </div>
+    </div>
+
+</body>
+</html>
