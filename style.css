@@ -314,7 +314,7 @@ h1 {
     margin-bottom: 30px;
 }
 
-/* --- BACK BUTTON --- */
+
 .back-btn {
     border: 2px solid #f8bbd0;
     color: #d81b60;
@@ -327,7 +327,7 @@ h1 {
     left: 40px;
 }
 
-/* --- TAGS / PILLS --- */
+
 .tag {
     background-color: #ad1457;
     color: white;
@@ -339,18 +339,18 @@ h1 {
     margin: 0 5px;
 }
 
-/* --- SECTION HEADERS & ICONS --- */
+
 .section-header {
     text-align: left;
     color: #ad1457;
-    font-size: 22px; /* Increased size */
+    font-size: 22px; 
     margin-top: 45px;
     display: flex;
     align-items: center;
     gap: 12px;
 }
 
-/* This fixes the "Hard Color" logo by making it match your pink theme */
+
 .icon {
     filter: sepia(1) saturate(3) hue-rotate(300deg) opacity(0.7);
     font-size: 24px;
@@ -363,20 +363,20 @@ h1 {
     margin-bottom: 15px;
 }
 
-/* --- THE BACK-END CODE BLOCK --- */
+
 .code-block {
     background-color: #262a33;
     color: #ffffff;
-    padding: 30px; /* More padding like Event Attendance */
+    padding: 30px; 
     border-radius: 20px;
     font-family: 'Consolas', 'Courier New', monospace;
     text-align: left;
     overflow-x: auto;
     line-height: 1.7;
-    font-size: 16px; /* Increased font size for back-end view */
+    font-size: 16px; 
 }
 
-/* Syntax Highlighting */
+
 .keyword { color: #c586c0; }
 .string { color: #ce9178; }
 .comment { color: #6a9955; }
