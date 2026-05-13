@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lindsay's Portfolio | Digital Space</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <nav class="side-menu">
+        <a href="#hero" title="Home"><i class="fas fa-home"></i></a>
+        <a href="#about" title="About"><i class="fas fa-user"></i></a>
+        <a href="#projects" title="Projects"><i class="fas fa-folder-open"></i></a>
+        <a href="#contact" title="Contact"><i class="fas fa-envelope"></i></a>
+    </nav>
+
+    <div class="main-container">
+        
+        <section id="hero" class="glass-panel">
+            <div class="profile-glow">
+                <img src="lindsay.jpg" alt="Lindsay" class="profile-img">
+            </div>
+            <h1>Hi, I'm <span class="shimmer-text">Lindsay Joy M. Serrano</span></h1>
+            <p class="tagline">Second Year Student | Aspiring Developer</p>
+        </section>
+
+        <section id="about" class="glass-panel">
+            <h2>About Me</h2>
+            <div class="logo-container">
+                <i class="fab fa-cuttlefish"></i>
+                <i class="fab fa-java"></i>
+                <i class="fab fa-php"></i>
+                <i class="fab fa-python"></i>
+            </div>
+
+            <div class="about-text">
+                <p>I am a second-year college student in Cavite State University Imus Campus. I specialize in building secure, data-driven applications and solving complex back-end puzzles.</p>
+                <div class="skills-bars">
+                    <div class="skill sliding-bar">
+                        <span>C++ - 75%</span> 
+                        <div class="bar"><div class="fill" style="width: 75%;"></div></div>
+                    </div>
+                    <div class="skill sliding-bar">
+                        <span>Java - 62%</span> 
+                        <div class="bar"><div class="fill" style="width: 62%;"></div></div>
+                    </div>
+                    <div class="skill sliding-bar">
+                        <span>PHP - 73%</span> 
+                        <div class="bar"><div class="fill" style="width: 73%;"></div></div>
+                    </div>
+                    <div class="skill sliding-bar">
+                        <span>Python - 73%</span> 
+                        <div class="bar"><div class="fill" style="width: 73%;"></div></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="projects" class="glass-panel">
+            <h2>My Projects</h2>
+            <div class="card">
+                <h3>Core Identity System</h3>
+                <p class="tech-note">Backend logic developed with PHP & PDO.</p>
+                <div class="card-btns">
+                    <a href="https://drive.google.com/drive/folders/1cGZqOMZj2SawtWAtkFVg6Y5Nls-7vABU" target="_blank" class="btn-solid">Open Project Drive</a>
+                    <a href="project-details.html" class="btn-outline">View Back-End</a>
+                </div>
+            </div>
+        <hr class="divider">
+
+            <div class="project-item">
+                <h3>Event Attendance System</h3>
+                <p class="tech-note">Developed using PHP Object-Oriented Programming and File Inclusion.</p>
+                <div class="project-btns">
+                    <a href="https://drive.google.com/drive/folders/1iHIYPUf9N3VQttQvIF_SOrA-ZFE7fhZX?usp=sharing
+" target="_blank" class="btn-pink-solid">Open Project Drive</a>
+                    <a href="library-details.html" class="btn-pink-outline">View Back-End</a>
+                </div>
+            </div>
+        </section>\
+
+        <section id="contact" class="glass-panel">
+            <h2>Get In Touch</h2>
+            <p>I'm always open to discussing new projects or tech opportunities.</p>
+            <div class="contact-links">
+                <a href="mailto:lindsayjoy.serrano@cvsu.edu.ph" class="contact-item"><i class="fas fa-envelope"></i> Email Me</a>
+                <a href="https://github.com/lindsayserrano20" target="_blank" class="contact-item"><i class="fab fa-github"></i> GitHub</a>
+            </div>
+        </section>
+
+    </div>
+    <div id="flame-friend">
+    <div class="face">
+        <div class="eyes">
+            <span class="eye"></span>
+            <span class="eye"></span>
+        </div>
+        <div class="mouth"></div>
+    </div>
+</div>
+    <script>
+    const flame = document.getElementById('flame-friend');
+    let mouseX = 0, mouseY = 0; // Where the mouse is
+    let flameX = 0, flameY = 0; // Where the flame is
+
+    // 1. Listen for mouse movement
+    window.addEventListener('mousemove', (e) => {
+        mouseX = e.clientX;
+        mouseY = e.clientY;
+    });
+
+    // 2. The "Smooth Follow" logic
+    function animate() {
+        // Calculate the distance between mouse and flame
+        // We move the flame 10% of the way to the mouse every frame (0.1)
+        flameX += (mouseX - flameX) * 0.1;
+        flameY += (mouseY - flameY) * 0.1;
+
+        // Apply the new position
+        // We subtract 15 to center the flame on the cursor (half of its 30px size)
+        flame.style.left = (flameX - 15) + 'px';
+        flame.style.top = (flameY - 15) + 'px';
+
+        requestAnimationFrame(animate);
+    }
+
+    animate();
+</script>
+</body>
+</html>

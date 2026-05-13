@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Details | Backend Logic</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="main-container">
+        
+        <section class="glass-panel">
+            <div style="text-align: left; margin-bottom: 20px;">
+                <a href="index.html" class="btn-outline" style="font-size: 0.9rem;">
+                    <i class="fas fa-arrow-left"></i> Back to Dashboard
+                </a>
+            </div>
+
+            <h2 class="shimmer-text">Core Identity System</h2>
+            <p>Below is a breakdown of the backend architecture and database integration used for this project.</p>
+
+            <hr style="border: 0; height: 1px; background: rgba(173, 20, 87, 0.1); margin: 30px 0;">
+
+            <div style="display: flex; justify-content: center; gap: 10px; margin-bottom: 30px;">
+                <span style="background: #ad1457; color: white; padding: 5px 15px; border-radius: 20px; font-size: 0.8rem;">PHP 8.x</span>
+                <span style="background: #ad1457; color: white; padding: 5px 15px; border-radius: 20px; font-size: 0.8rem;">PDO</span>
+                <span style="background: #ad1457; color: white; padding: 5px 15px; border-radius: 20px; font-size: 0.8rem;">MySQL</span>
+            </div>
+
+            <div style="text-align: left; margin-bottom: 30px;">
+                <h3 style="color: #ad1457;"><i class="fas fa-database"></i> Database Connection</h3>
+                <p style="font-size: 0.9rem; color: #555;">Utilizing PDO for secure, prepared statements to prevent SQL Injection.</p>
+                <div style="background: #282c34; border-radius: 15px; padding: 20px; overflow-x: auto; box-shadow: inset 0 4px 10px rgba(0,0,0,0.3);">
+                    <pre style="margin: 0; color: #abb2bf; font-family: 'Consolas', monospace;"><code><span style="color: #c678dd;">&lt;?php</span>
+<span style="color: #5c6370;">// db_connect.php</span>
+<span style="color: #e06c75;">$host</span> = <span style="color: #98c379;">'localhost'</span>;
+<span style="color: #e06c75;">$db</span> = <span style="color: #98c379;">'gensoc_db'</span>;
+<span style="color: #e06c75;">$user</span> = <span style="color: #98c379;">'root'</span>;
+<span style="color: #e06c75;">$pass</span> = <span style="color: #98c379;">''</span>;
+
+<span style="color: #c678dd;">try</span> {
+    <span style="color: #e06c75;">$pdo</span> = <span style="color: #c678dd;">new</span> <span style="color: #e5c07b;">PDO</span>(<span style="color: #98c379;">"mysql:host=$host;dbname=$db;charset=utf8"</span>, <span style="color: #e06c75;">$user</span>, <span style="color: #e06c75;">$pass</span>);
+    <span style="color: #e06c75;">$pdo</span>-><span style="color: #61afef;">setAttribute</span>(<span style="color: #e5c07b;">PDO</span>::<span style="color: #d19a66;">ATTR_ERRMODE</span>, <span style="color: #e5c07b;">PDO</span>::<span style="color: #d19a66;">ATTR_ERRMODE_EXCEPTION</span>);
+} <span style="color: #c678dd;">catch</span> (<span style="color: #e5c07b;">PDOException</span> <span style="color: #e06c75;">$e</span>) {
+    <span style="color: #c678dd;">echo</span> <span style="color: #98c379;">"Connection failed: "</span> . <span style="color: #e06c75;">$e</span>-><span style="color: #61afef;">getMessage</span>();
+}
+<span style="color: #c678dd;">?&gt;</span></code></pre>
+                </div>
+            </div>
+
+            <div style="text-align: left;">
+                <h3 style="color: #ad1457;"><i class="fas fa-file-import"></i> Data Submission Logic</h3>
+                <p style="font-size: 0.9rem; color: #555;">Handling form data and executing the insertion into the <code>user_info</code> table.</p>
+                <div style="background: #282c34; border-radius: 15px; padding: 20px; overflow-x: auto; box-shadow: inset 0 4px 10px rgba(0,0,0,0.3);">
+                    <pre style="margin: 0; color: #abb2bf; font-family: 'Consolas', monospace;"><code><span style="color: #5c6370;">// submit.php</span>
+<span style="color: #c678dd;">if</span> (<span style="color: #e06c75;">$_SERVER</span>[<span style="color: #98c379;">"REQUEST_METHOD"</span>] == <span style="color: #98c379;">"POST"</span>) {
+    <span style="color: #e06c75;">$name</span> = <span style="color: #e06c75;">$_POST</span>[<span style="color: #98c379;">'full_name'</span>];
+    <span style="color: #e06c75;">$identity</span> = <span style="color: #e06c75;">$_POST</span>[<span style="color: #98c379;">'gender_identity'</span>];
+
+    <span style="color: #e06c75;">$sql</span> = <span style="color: #98c379;">"INSERT INTO user_info (name, identity) VALUES (?, ?)"</span>;
+    <span style="color: #e06c75;">$stmt</span> = <span style="color: #e06c75;">$pdo</span>-><span style="color: #61afef;">prepare</span>(<span style="color: #e06c75;">$sql</span>);
+    <span style="color: #e06c75;">$stmt</span>-><span style="color: #61afef;">execute</span>([<span style="color: #e06c75;">$name</span>, <span style="color: #e06c75;">$identity</span>]);
+
+    <span style="color: #c678dd;">echo</span> <span style="color: #98c379;">"Record added successfully!"</span>;
+}</code></pre>
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+</body>
+</html>

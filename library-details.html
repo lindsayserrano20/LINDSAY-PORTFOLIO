@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Library System | Backend Logic</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="main-container">
+        
+        <section class="glass-panel">
+            <div style="text-align: left; margin-bottom: 20px;">
+                <a href="index.html" class="btn-pink-outline" style="font-size: 0.9rem; padding: 5px 15px;">
+                    <i class="fas fa-arrow-left"></i> Back to Dashboard
+                </a>
+            </div>
+
+            <h2 class="shimmer-text">Event Attendance System</h2>
+            <p>Below is a breakdown of the Object-Oriented Programming (OOP) and file inclusion logic used for this project.</p>
+
+            <hr style="border: 0; height: 1px; background: rgba(173, 20, 87, 0.1); margin: 30px 0;">
+
+            <div style="display: flex; justify-content: center; gap: 10px; margin-bottom: 30px;">
+                <span style="background: #ad1457; color: white; padding: 5px 15px; border-radius: 20px; font-size: 0.8rem;">PHP 8.x</span>
+                <span style="background: #ad1457; color: white; padding: 5px 15px; border-radius: 20px; font-size: 0.8rem;">OOP</span>
+                <span style="background: #ad1457; color: white; padding: 5px 15px; border-radius: 20px; font-size: 0.8rem;">INCLUDE</span>
+            </div>
+
+            <div style="text-align: left; margin-bottom: 30px;">
+                <h3 style="color: #ad1457;"><i class="fas fa-box"></i> Class Structure (Book.php)</h3>
+                <p style="font-size: 0.9rem; color: #555;">Defining the properties and methods for book objects.</p>
+                <div style="background: #282c34; border-radius: 15px; padding: 20px; overflow-x: auto; box-shadow: inset 0 4px 10px rgba(0,0,0,0.3);">
+                    <pre style="margin: 0; color: #abb2bf; font-family: 'Consolas', monospace;"><code><span style="color: #c678dd;">&lt;?php</span>
+<span style="color: #c678dd;">class</span> <span style="color: #e5c07b;">Book</span> {
+    <span style="color: #c678dd;">public</span> <span style="color: #e06c75;">$title</span>;
+    <span style="color: #c678dd;">public</span> <span style="color: #e06c75;">$author</span>;
+
+    <span style="color: #c678dd;">public function</span> <span style="color: #61afef;">__construct</span>(<span style="color: #e06c75;">$title</span>, <span style="color: #e06c75;">$author</span>) {
+        <span style="color: #e06c75;">$this</span>-><span style="color: #e06c75;">title</span> = <span style="color: #e06c75;">$title</span>;
+        <span style="color: #e06c75;">$this</span>-><span style="color: #e06c75;">author</span> = <span style="color: #e06c75;">$author</span>;
+    }
+}
+<span style="color: #c678dd;">?&gt;</span></code></pre>
+                </div>
+            </div>
+
+            <div style="text-align: left;">
+                <h3 style="color: #ad1457;"><i class="fas fa-code-branch"></i> Logic Implementation</h3>
+                <p style="font-size: 0.9rem; color: #555;">Using <code>include</code> to load the class and create new book instances.</p>
+                <div style="background: #282c34; border-radius: 15px; padding: 20px; overflow-x: auto; box-shadow: inset 0 4px 10px rgba(0,0,0,0.3);">
+                    <pre style="margin: 0; color: #abb2bf; font-family: 'Consolas', monospace;"><code><span style="color: #5c6370;">// index.php</span>
+<span style="color: #c678dd;">include</span> <span style="color: #98c379;">'Book.php'</span>;
+
+<span style="color: #e06c75;">$library</span> = [
+    <span style="color: #c678dd;">new</span> <span style="color: #e5c07b;">Book</span>(<span style="color: #98c379;">"PHP for Beginners"</span>, <span style="color: #98c379;">"Lindsay"</span>),
+    <span style="color: #c678dd;">new</span> <span style="color: #e5c07b;">Book</span>(<span style="color: #98c379;">"Data Structures"</span>, <span style="color: #98c379;">"Lindsay"</span>)
+];
+
+<span style="color: #c678dd;">foreach</span> (<span style="color: #e06c75;">$library</span> <span style="color: #c678dd;">as</span> <span style="color: #e06c75;">$item</span>) {
+    <span style="color: #c678dd;">echo</span> <span style="color: #e06c75;">$item</span>-><span style="color: #e06c75;">title</span>;
+}</code></pre>
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+</body>
+</html>
