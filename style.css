@@ -268,7 +268,7 @@ body {
     to { box-shadow: 0 0 30px #ad1457, 0 0 50px #ff80ab, 0 0 10px white; }
 }
 
-/* --- GLOBAL LAYOUT --- */
+
 body {
     background-color: #f06292;
     font-family: 'Segoe UI', sans-serif;
@@ -290,9 +290,8 @@ body {
     position: relative;
 }
 
-/* --- THE SHINE EFFECT TITLE --- */
 h1 {
-    font-size: 32px; /* Increased size */
+    font-size: 32px; 
     font-weight: 800;
     margin-top: 40px;
     margin-bottom: 10px;
