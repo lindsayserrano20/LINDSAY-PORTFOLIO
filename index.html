@@ -105,22 +105,20 @@
     const flame = document.getElementById('flame-friend');
     let mouseX = 0, mouseY = 0; // Where the mouse is
     let flameX = 0, flameY = 0; // Where the flame is
-
-    // 1. Listen for mouse movement
+    
     window.addEventListener('mousemove', (e) => {
         mouseX = e.clientX;
         mouseY = e.clientY;
     });
 
-    // 2. The "Smooth Follow" logic
+    
     function animate() {
-        // Calculate the distance between mouse and flame
-        // We move the flame 10% of the way to the mouse every frame (0.1)
+        
+        
         flameX += (mouseX - flameX) * 0.1;
         flameY += (mouseY - flameY) * 0.1;
 
-        // Apply the new position
-        // We subtract 15 to center the flame on the cursor (half of its 30px size)
+    
         flame.style.left = (flameX - 15) + 'px';
         flame.style.top = (flameY - 15) + 'px';
 

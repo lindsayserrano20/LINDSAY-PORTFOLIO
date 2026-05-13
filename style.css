@@ -1,7 +1,6 @@
 html { scroll-behavior: smooth; }
 body {
     margin: 0; font-family: 'Segoe UI', sans-serif;
-    /* Combination of Deep Pink and Light Pink */
     background: linear-gradient(-45deg, #fce4ec, #f8bbd0, #f06292, #e91e63);
     background-size: 400% 400%;
     animation: twirlGradient 10s ease infinite; /* Faster animation for more "twirl" */
@@ -14,7 +13,7 @@ body {
     100% { background-position: 0% 50%; }
 }
 
-/* UI ELEMENTS */
+
 .main-container { max-width: 900px; width: 100%; margin-left: 60px; }
 .glass-panel {
     background: rgba(255, 255, 255, 0.9); /* Slightly more solid to pop against dark pink */
@@ -24,7 +23,7 @@ body {
     box-shadow: 0 15px 35px rgba(0,0,0,0.1);
 }
 
-/* PROFILE IMAGE */
+
 .profile-img {
     width: 180px; height: 180px;
     border-radius: 50%; object-fit: cover;
@@ -33,14 +32,14 @@ body {
     margin-bottom: 20px;
 }
 
-/* LOGO & SKILLS */
+
 .logo-container { display: flex; justify-content: center; gap: 30px; margin-bottom: 25px; font-size: 2.5rem; color: #ad1457; }
 .skills-bars { text-align: left; max-width: 500px; margin: 0 auto; }
 .skill { margin-bottom: 20px; }
 .bar { background: rgba(0,0,0,0.05); height: 12px; border-radius: 10px; margin-top: 8px; overflow: hidden; }
 .fill { background: #ad1457; height: 100%; border-radius: 10px; }
 
-/* SLIDING ANIMATION */
+
 .sliding-bar { opacity: 0; transform: translateX(-50px); animation: slideIn 0.8s forwards; }
 .sliding-bar:nth-child(1) { animation-delay: 0.2s; }
 .sliding-bar:nth-child(2) { animation-delay: 0.4s; }
@@ -48,7 +47,7 @@ body {
 .sliding-bar:nth-child(4) { animation-delay: 0.8s; }
 @keyframes slideIn { to { opacity: 1; transform: translateX(0); } }
 
-/* CONTACT LINKS */
+
 .contact-links { display: flex; justify-content: center; gap: 20px; margin-top: 20px; }
 .contact-item { text-decoration: none; color: #ad1457; font-weight: bold; font-size: 1.1rem; transition: 0.3s; }
 .contact-item:hover { transform: scale(1.1); color: #880e4f; }
@@ -63,7 +62,6 @@ body {
 .btn-solid { background: #ad1457; color: white; padding: 12px 25px; border-radius: 30px; text-decoration: none; font-weight: bold; display: inline-block; }
 .btn-outline { border: 2px solid #ad1457; color: #ad1457; padding: 10px 22px; border-radius: 30px; text-decoration: none; display: inline-block; }
 
-/* SIDE MENU */
 .side-menu {
     position: fixed; left: 20px; top: 50%; transform: translateY(-50%);
     background: rgba(255, 255, 255, 0.9); padding: 20px 10px; border-radius: 50px;
@@ -128,7 +126,7 @@ body {
     margin-top: 20px; 
 }
 
-/* BUTTON STYLES */
+
 .btn-pink-solid { 
     background: #ad1457; 
     color: white; 
@@ -154,7 +152,7 @@ body {
 .btn-pink-solid:hover { background: #880e4f; }
 .btn-pink-outline:hover { background: rgba(173, 20, 87, 0.05); }
 
-/* Keeps projects separated and clean */
+
 .project-item { 
     padding: 3px 0; 
 }
@@ -166,7 +164,7 @@ body {
     margin: 50px 0; 
 }
 
-/* Aligns buttons side-by-side */
+
 .project-btns { 
     display: flex; 
     justify-content: center; 
@@ -174,7 +172,7 @@ body {
     margin-top: 15px; 
 }
 
-/* Button Styles matching your photo */
+
 .btn-pink-solid { 
     background: #ad1457; 
     color: white; 
@@ -197,7 +195,7 @@ body {
 
 
 #flame-friend {
-    width: 40px; /* Made her slightly bigger for the face */
+    width: 40px; 
     height: 40px;
     background: #ad1457;
     border-radius: 50% 0% 50% 50%;
@@ -211,7 +209,7 @@ body {
     justify-content: center;
 }
 
-/* Correcting the rotation for the face */
+
 .face {
     transform: rotate(45deg); 
     display: flex;
@@ -240,15 +238,13 @@ body {
     border-radius: 0 0 10px 10px; /* This makes the "excited" curve */
 }
 
-/* Adding a cute blink animation */
+
 @keyframes blink {
     0%, 90%, 100% { transform: scaleY(1); }
     95% { transform: scaleY(0.1); }
 }
 
-/* --- PROFILE PICTURE FLOATING & SHINE --- */
 
-/* This makes the actual image float up and down */
 .profile-img, .hero-image img, .profile-photo {
     animation: floatProfile 4s ease-in-out infinite !important;
     box-shadow: 0 0 20px rgba(173, 20, 87, 0.3); /* Soft pink glow */
@@ -262,7 +258,7 @@ body {
     100% { transform: translateY(0px); }
 }
 
-/* This adds a "twinkle" effect to the image border */
+
 .profile-img:hover, .hero-image img:hover {
     animation: floatProfile 4s ease-in-out infinite, starShine 1.5s infinite alternate !important;
 }
